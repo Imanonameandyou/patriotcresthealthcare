@@ -1,0 +1,30 @@
+/* Patriot Crest Healthcare — brand tokens
+   Source of truth: brand_assets/reference/brand-guidelines-v1.1.html
+   Values below are the approved palette; do not invent new brand colors. Derive tints/shades from these. */
+:root {
+  /* Core palette */
+  --pc-navy:        #12345B; /* Patriot Navy  — anchors the brand, headings */
+  --pc-navy-deep:   #092548; /* footer / deepest surfaces */
+  --pc-blue:        #2C6596; /* Heritage Blue — links, secondary accents */
+  --pc-red:         #C92336; /* Flag Red      — primary CTAs, sparingly */
+  --pc-red-dark:    #A7192B; /* CTA hover/active */
+  --pc-gold:        #D6A33A; /* Emblem Gold   — restrained accent (rules, stars) */
+  --pc-gold-light:  #F2D99A; /* gold on navy */
+
+  /* Surfaces & text */
+  --pc-white:       #FFFFFF; /* Clean White */
+  --pc-paper:       #F7FAFD; /* Cloud White */
+  --pc-ice:         #EDF4FA;
+  --pc-sky:         #DCECF8; /* Sky Blue — pale blue sections */
+  --pc-ink:         #18324D; /* Body Ink — body text */
+  --pc-muted:       #5D7185; /* secondary text */
+  --pc-line:        #D8E3EC; /* hairlines / borders */
+
+  /* Typography — guidelines specify Montserrat 400 + 700 ONLY */
+  --pc-font: "Montserrat", Arial, sans-serif;
+}
+
+/* Suggested balance: ~50% white / 25% navy / 12% pale blue / 8% red / 5% gold.
+   Accessibility: navy or ink for important text on light. No small white text on gold or pale blue.
+   Red and gold are accents, never long-form text colors.
+   Google Fonts: https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap */

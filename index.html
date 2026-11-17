@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#12345B">
+<title>Patriot Crest Healthcare | Free Plan Review</title>
+<meta name="description" content="See how much you could save with a private health plan. Book a free, no-obligation plan review with a licensed Patriot Crest agent.">
+<link rel="icon" type="image/png" sizes="32x32" href="brand_assets/favicon/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="brand_assets/favicon/favicon-16.png">
+<link rel="apple-touch-icon" href="brand_assets/favicon/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          navy: { DEFAULT: '#12345B', deep: '#092548' },
+          heritage: '#2C6596',
+          flag: { DEFAULT: '#C92336', dark: '#A7192B' },
+          gold: { DEFAULT: '#D6A33A', light: '#F2D99A' },
+          paper: '#F7FAFD', ice: '#EDF4FA', sky: '#DCECF8',
+          ink: '#18324D', muted: '#5D7185', line: '#D8E3EC',
+        },
+        fontFamily: { sans: ['Montserrat', 'Arial', 'sans-serif'] },
+      },
+    },
+  };
+</script>
+<style>
+  /* Brand tokens (mirrors brand_assets/brand-tokens.css) */
+  :root {
+    --pc-navy:#12345B; --pc-navy-deep:#092548; --pc-blue:#2C6596;
+    --pc-red:#C92336; --pc-red-dark:#A7192B; --pc-gold:#D6A33A; --pc-gold-light:#F2D99A;
+    --pc-white:#FFFFFF; --pc-paper:#F7FAFD; --pc-ice:#EDF4FA; --pc-sky:#DCECF8;
+    --pc-ink:#18324D; --pc-muted:#5D7185; --pc-line:#D8E3EC;
+    --spring: cubic-bezier(.34, 1.4, .64, 1);
+    --ease-out: cubic-bezier(.22, 1, .36, 1);
+    /* Spacing tokens */
+    --section-y: clamp(48px, 9vw, 112px);
+    /* Depth system: base -> elevated -> floating (navy-tinted, layered) */
+    --shadow-elevated: 0 1px 2px rgba(9,37,72,.06), 0 4px 12px -2px rgba(9,37,72,.06), 0 16px 32px -12px rgba(9,37,72,.10);
+    --shadow-floating: 0 2px 4px rgba(9,37,72,.06), 0 12px 28px -6px rgba(9,37,72,.14), 0 32px 64px -24px rgba(9,37,72,.22);
+    --shadow-cta: 0 1px 2px rgba(167,25,43,.35), 0 8px 20px -6px rgba(201,35,54,.45), 0 18px 36px -14px rgba(201,35,54,.40);
+  }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body { font-family: 'Montserrat', Arial, sans-serif; color: var(--pc-ink); background: var(--pc-white); line-height: 1.7; -webkit-font-smoothing: antialiased; }
+  html body :is(h1, h2, h3) { color: var(--pc-navy); font-weight: 700; letter-spacing: -0.03em; line-height: 1.12; text-wrap: balance; }
+  p { text-wrap: pretty; }
+
+  /* Grain overlay (SVG noise) */
+  .grain { position: relative; isolation: isolate; }
+  .grain::after {
+    content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: .055; mix-blend-mode: multiply;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.07 0 0 0 0 0.2 0 0 0 0 0.36 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .grain-light::after { mix-blend-mode: screen; opacity: .08; }
+
+  /* Backgrounds: layered radial gradients */
+  .bg-hero {
+    background:
+      radial-gradient(60% 70% at 100% 0%, rgba(220,236,248,.95) 0%, rgba(220,236,248,0) 70%),
+      radial-gradient(40% 50% at 0% 100%, rgba(242,217,154,.28) 0%, rgba(242,217,154,0) 70%),
+      radial-gradient(50% 60% at 10% 10%, rgba(237,244,250,.9) 0%, rgba(237,244,250,0) 70%),
+      var(--pc-white);
+  }
+  .bg-sky {
+    background:
+      radial-gradient(50% 60% at 90% 10%, rgba(255,255,255,.75) 0%, rgba(255,255,255,0) 70%),
+      radial-gradient(45% 55% at 5% 95%, rgba(220,236,248,.9) 0%, rgba(220,236,248,0) 70%),
+      var(--pc-ice);
+  }
+  .bg-navy {
+    background:
+      radial-gradient(55% 70% at 100% 0%, rgba(44,101,150,.55) 0%, rgba(44,101,150,0) 70%),
+      radial-gradient(45% 60% at 0% 100%, rgba(214,163,58,.12) 0%, rgba(214,163,58,0) 70%),
+      var(--pc-navy);
+  }
+  .bg-navy-deep {
+    background:
+      radial-gradient(60% 80% at 50% 0%, rgba(44,101,150,.45) 0%, rgba(44,101,150,0) 70%),
+      radial-gradient(40% 50% at 100% 100%, rgba(201,35,54,.14) 0%, rgba(201,35,54,0) 70%),
+      var(--pc-navy-deep);
+  }
+
+  /* Highlight (marker) */
+  .mark { background: linear-gradient(transparent 58%, rgba(242,217,154,.85) 58%, rgba(242,217,154,.85) 92%, transparent 92%); padding: 0 .08em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+
+  /* Buttons: hover crossfade via pseudo-element opacity; motion via transform only */
+  .btn {
+    position: relative; isolation: isolate; display: inline-flex; align-items: center; justify-content: center; gap: .6em;
+    font-weight: 700; letter-spacing: .06em; text-transform: uppercase; border-radius: 999px; cursor: pointer;
+    transition: transform .45s var(--spring), opacity .2s ease;
+    -webkit-tap-highlight-color: transparent; touch-action: manipulation;
+  }
+  @media (max-width: 420px) { .btn { letter-spacing: .03em; } }
+  /* Keep the main CTAs on one line on narrow phones (360px class) */
+  @media (max-width: 380px) { main .btn-red { font-size: 12.5px; letter-spacing: .02em; padding-inline: 14px; gap: .5em; } }
+  .btn::before { content: ""; position: absolute; inset: 0; border-radius: inherit; z-index: -1; opacity: 0; transition: opacity .25s var(--ease-out); }
+  .btn .arrow { transition: transform .45s var(--spring); }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:hover::before { opacity: 1; }
+  .btn:hover .arrow { transform: translateX(4px); }
+  .btn:active { transform: translateY(1px) scale(.98); transition-duration: .1s; }
+  .btn:focus-visible { outline: 3px solid var(--pc-blue); outline-offset: 4px; }
+  .on-dark .btn:focus-visible, .btn.on-dark:focus-visible { outline-color: var(--pc-gold-light); }
+
+  .btn-red { background: var(--pc-red); color: #fff; box-shadow: var(--shadow-cta); }
+  .btn-red::before { background: var(--pc-red-dark); }
+
+  .btn-ghost { background: #fff; color: var(--pc-navy); box-shadow: inset 0 0 0 1.5px var(--pc-line), var(--shadow-elevated); }
+  .btn-ghost::before { background: var(--pc-ice); }
+
+  /* Cards */
+  .card { background: #fff; border: 1px solid var(--pc-line); border-radius: 20px; box-shadow: var(--shadow-elevated); transition: transform .5s var(--spring); }
+  .card-lift:hover { transform: translateY(-4px); }
+
+  /* Links */
+  .link { color: var(--pc-blue); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .link:hover { color: var(--pc-navy); }
+  .link:focus-visible { outline: 2px solid var(--pc-blue); outline-offset: 3px; border-radius: 2px; }
+  .link:active { opacity: .7; }
+
+  /* FAQ */
+  details summary { list-style: none; cursor: pointer; }
+  details summary::-webkit-details-marker { display: none; }
+  details summary:focus-visible { outline: 3px solid var(--pc-blue); outline-offset: 4px; border-radius: 12px; }
+  details summary:hover .faq-q { color: var(--pc-blue); }
+  details summary:active .faq-icon { transform: scale(.9); }
+  .faq-icon { transition: transform .45s var(--spring); }
+  details[open] .faq-icon { transform: rotate(45deg); }
+  details[open] summary:active .faq-icon { transform: rotate(45deg) scale(.9); }
+  .faq-body { animation: faqIn .45s var(--ease-out); }
+  @keyframes faqIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+  /* Reveal on scroll */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .8s var(--ease-out), transform .9s var(--spring); }
+  .reveal.is-in { opacity: 1; transform: none; }
+  .no-js .reveal { opacity: 1; transform: none; }
+
+  /* Hero image treatment: light navy tint, restrained */
+  .photo-tint { background: linear-gradient(to top, rgba(9,37,72,.38) 0%, rgba(9,37,72,0) 45%); }
+  .photo-multiply { background: var(--pc-sky); mix-blend-mode: multiply; opacity: .18; }
+
+  /* Card / step imagery: gradient + color treatment, gentle zoom on card hover */
+  .card-media { position: relative; overflow: hidden; background: var(--pc-sky); }
+  .card-media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .7s var(--ease-out); }
+  .card-media::before { content: ""; position: absolute; inset: 0; z-index: 1; background: var(--pc-sky); mix-blend-mode: multiply; opacity: .14; pointer-events: none; }
+  .card-media::after { content: ""; position: absolute; inset: 0; z-index: 1; background: linear-gradient(to top, rgba(9,37,72,.30) 0%, rgba(9,37,72,0) 40%); pointer-events: none; }
+  .card-lift:hover .card-media img { transform: scale(1.04); }
+
+  /* Final CTA photo background */
+  .cta-photo { position: absolute; inset: 0; z-index: -2; }
+  .cta-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 70%; }
+  .cta-photo::after { content: ""; position: absolute; inset: 0; background:
+      linear-gradient(to bottom, rgba(9,37,72,.55) 0%, rgba(9,37,72,.25) 45%, rgba(9,37,72,.15) 75%, rgba(9,37,72,.55) 100%); }
+
+  /* Carrier logos: per-logo optical heights so wordmarks and stacked lockups read at the same weight.
+     Containers can scale the whole set with --logo-scale. */
+  .logo { display: block; width: auto; max-width: none; height: calc(var(--h) * var(--logo-scale, 1)); }
+  .logo-uhc { --h: 30px; } .logo-bcbs { --h: 28px; } .logo-aetna { --h: 20px; } .logo-cigna { --h: 31px; } .logo-humana { --h: 19px; } .logo-kaiser { --h: 34px; }
+
+  /* Logo ticker: two identical sets on a track that slides -50% for a seamless loop */
+  .ticker { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+  .ticker-track { display: flex; width: max-content; animation: ticker 30s linear infinite; }
+  .ticker-set { display: flex; align-items: center; gap: 44px; padding-right: 44px; flex-shrink: 0; }
+  .ticker:hover .ticker-track, .ticker:focus-within .ticker-track { animation-play-state: paused; }
+  /* Dark photo hero on phones: the marker highlight becomes gold text with a gold underline stripe */
+  @media (max-width: 639px) {
+    #top .mark { color: var(--pc-gold-light); background: linear-gradient(transparent 80%, rgba(214,163,58,.7) 80%, rgba(214,163,58,.7) 92%, transparent 92%); }
+  }
+  @keyframes ticker { to { transform: translate3d(-50%, 0, 0); } }
+
+  /* Logo chips for dark surfaces (logos are full-colour, so they sit on white) */
+  .logo-chip { display: flex; align-items: center; justify-content: center; height: 52px; padding-inline: 16px; border-radius: 14px; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.18), 0 10px 24px -12px rgba(0,0,0,.45); }
+
+  /* Private-plan cards: swipeable row below md, grid from md up */
+  @media (max-width: 767px) {
+    .snap-row { scrollbar-width: none; overscroll-behavior-x: contain; }
+    .snap-row::-webkit-scrollbar { display: none; }
+  }
+  .dot { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 999px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+  .dot span { display: block; width: 8px; height: 8px; border-radius: 999px; background: var(--pc-navy); opacity: .22; transition: transform .45s var(--spring), opacity .25s var(--ease-out); }
+  .dot:hover span { opacity: .45; }
+  .dot:active span { transform: scale(.8); }
+  .dot:focus-visible { outline: 3px solid var(--pc-blue); outline-offset: 0; }
+  .dot[aria-current="true"] span { opacity: 1; transform: scaleX(2.5); }
+
+  /* Emblem sits on white/pale surfaces only */
+  .emblem { mix-blend-mode: multiply; }
+
+  /* Dialog */
+  dialog { padding: 0; border: 0; background: transparent; max-width: min(560px, calc(100vw - 32px)); width: 100%; overflow: visible; }
+  dialog::backdrop { background: rgba(9,37,72,.55); backdrop-filter: blur(6px); }
+  dialog[open] .dialog-panel { animation: dlgIn .55s var(--spring); }
+  @keyframes dlgIn { from { opacity: 0; transform: translateY(16px) scale(.97); } to { opacity: 1; transform: none; } }
+  .field { width: 100%; border: 1.5px solid var(--pc-line); border-radius: 12px; padding: 12px 14px; font: inherit; font-size: 16px; color: var(--pc-ink); background: #fff; }
+  .field:hover { border-color: #b9cad9; }
+  .field:focus-visible { outline: 3px solid rgba(44,101,150,.35); outline-offset: 1px; border-color: var(--pc-blue); }
+  .icon-btn { transition: transform .4s var(--spring); }
+  .icon-btn:hover { transform: rotate(90deg); }
+  .icon-btn:active { transform: rotate(90deg) scale(.9); }
+  .icon-btn:focus-visible { outline: 3px solid var(--pc-blue); outline-offset: 2px; }
+
+  .skip { position: absolute; left: 16px; top: -120px; z-index: 100; transition: transform .3s var(--ease-out); }
+  .skip:focus-visible { transform: translateY(136px); outline: 3px solid var(--pc-gold-light); }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    .reveal { opacity: 1; transform: none; }
+    /* The carrier ticker is slow, ambient and pauses on hover/focus, so it keeps looping (slower) instead of freezing */
+    .ticker-track { animation: ticker 45s linear infinite !important; }
+  }
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');</script>
+<a href="#main" class="skip btn btn-red px-5 py-3 text-sm">Skip to content</a>
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-40 border-b border-line/80 bg-white/90 backdrop-blur-md">
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6">
+    <a href="#top" class="group flex items-center gap-3 rounded-lg focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-4 focus-visible:outline-heritage active:opacity-80" aria-label="Patriot Crest Healthcare home">
+      <img src="brand_assets/logo/patriot-crest-emblem.png" alt="" width="52" height="52" class="emblem h-11 w-11 sm:h-[52px] sm:w-[52px] transition-transform duration-500 [transition-timing-function:var(--spring)] group-hover:-rotate-3">
+      <span class="leading-none">
+        <span class="block text-[15px] font-bold tracking-[0.08em] text-navy sm:text-[17px]">PATRIOT CREST</span>
+        <span class="mt-1 block text-center text-[9px] font-bold tracking-[0.34em] text-navy/80 sm:text-[10px]">HEALTHCARE</span>
+      </span>
+    </a>
+    <button type="button" data-open-form class="btn btn-red px-4 py-3 text-[11px] sm:px-6 sm:py-3 sm:text-xs">
+      <span class="sm:hidden">Free Review</span><span class="hidden sm:inline">Book Your Free Plan Review</span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section id="top" class="bg-hero grain relative overflow-hidden">
+  <!-- Mobile-only photo background (family photo + navy overlay for text contrast). From sm up the hero is light and the chart carries the right column. -->
+  <div class="absolute inset-0 -z-10 sm:hidden" aria-hidden="true">
+    <img src="images/hero-family-900.webp" srcset="images/hero-family-600.webp 600w, images/hero-family-900.webp 900w" sizes="100vw" alt="" class="h-full w-full object-cover object-[50%_30%]" width="1200" height="1200" fetchpriority="high" decoding="async">
+    <div class="absolute inset-0 bg-[linear-gradient(180deg,rgba(9,37,72,.80)_0%,rgba(9,37,72,.62)_40%,rgba(9,37,72,.72)_75%,rgba(9,37,72,.90)_100%)]"></div>
+  </div>
+  <div class="mx-auto grid max-w-6xl items-center gap-8 px-4 pb-12 pt-8 sm:gap-10 sm:px-6 sm:pb-16 sm:pt-10 lg:grid-cols-[1.12fr_.88fr] lg:gap-14 lg:pb-24 lg:pt-16">
+    <div class="reveal min-w-0">
+      <p class="inline-flex items-center gap-2 rounded-full bg-white px-3.5 py-1.5 text-[11px] font-bold uppercase tracking-[0.2em] text-flag shadow-[var(--shadow-elevated)] ring-1 ring-line">
+        <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-flag opacity-60"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-flag"></span></span>
+        Breaking:
+      </p>
+      <h1 class="mt-4 text-[30px] max-sm:!text-white min-[400px]:text-[32px] sm:mt-5 sm:text-[44px] lg:text-[52px]">
+        How Hundreds of Florida Families on ACA Marketplace Plans Are <span class="mark">Saving 40% on Their Health Insurance</span>... For Being Healthy!
+      </h1>
+      <div class="mt-7 flex flex-col gap-4 sm:mt-8 sm:flex-row sm:items-center">
+        <button type="button" data-open-form class="btn btn-red px-8 py-4 text-sm sm:text-[15px]">
+          Book Your Free Plan Review
+          <svg class="arrow h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+      <!-- Trust points: three equal tiles on mobile (no orphaned third item), one inline row from sm up -->
+      <ul class="mt-4 grid grid-cols-3 gap-2 text-center text-[12.5px] font-bold leading-tight text-white sm:mt-6 sm:text-navy sm:flex sm:flex-wrap sm:gap-x-6 sm:gap-y-2 sm:text-left sm:text-[13px]">
+        <li class="flex flex-col items-center justify-center gap-1.5 rounded-xl bg-white/10 px-1.5 py-2.5 ring-1 ring-white/25 backdrop-blur-sm sm:flex-row sm:rounded-none sm:bg-transparent sm:p-0 sm:ring-0 sm:backdrop-blur-none"><svg class="h-5 w-5 shrink-0 text-gold sm:h-4 sm:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>Free plan review</li>
+        <li class="flex flex-col items-center justify-center gap-1.5 rounded-xl bg-white/10 px-1.5 py-2.5 ring-1 ring-white/25 backdrop-blur-sm sm:flex-row sm:rounded-none sm:bg-transparent sm:p-0 sm:ring-0 sm:backdrop-blur-none"><svg class="h-5 w-5 shrink-0 text-gold sm:h-4 sm:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Takes just 15&nbsp;minutes</li>
+        <li class="flex flex-col items-center justify-center gap-1.5 rounded-xl bg-white/10 px-1.5 py-2.5 ring-1 ring-white/25 backdrop-blur-sm sm:flex-row sm:rounded-none sm:bg-transparent sm:p-0 sm:ring-0 sm:backdrop-blur-none"><svg class="h-5 w-5 shrink-0 text-gold sm:h-4 sm:w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.2-8 9-4.8-.8-8-4.5-8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>No obligation</li>
+      </ul>
+
+      <!-- Carrier ticker (above the fold). COMPLIANCE: confirm carrier appointments before launch (PROJECT_BRIEF guardrails).
+           Kaiser Permanente is optimised in images/logos/ but not shown: it does not offer plans in Florida. -->
+      <div class="mt-6 border-t border-white/20 pt-4 sm:mt-8 sm:border-line sm:pt-6">
+        <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-white/80 sm:text-muted">Access to plans from top carriers</p>
+        <!-- White panel on the dark mobile hero: the full-colour logos need a light surface -->
+        <div class="mt-3.5 rounded-2xl bg-white py-3 sm:rounded-none sm:bg-transparent sm:py-0">
+        <div class="ticker" data-ticker>
+          <div class="ticker-track">
+            <ul class="ticker-set" aria-label="Insurance carriers">
+              <li><img src="images/logos/unitedhealthcare.png" alt="UnitedHealthcare" class="logo logo-uhc" width="306" height="96" decoding="async"></li>
+              <li><img src="images/logos/bcbs.png" alt="Blue Cross Blue Shield" class="logo logo-bcbs" width="492" height="96" decoding="async"></li>
+              <li><img src="images/logos/aetna.png" alt="Aetna" class="logo logo-aetna" width="375" height="96" decoding="async"></li>
+              <li><img src="images/logos/cigna.png" alt="Cigna" class="logo logo-cigna" width="273" height="96" decoding="async"></li>
+              <li><img src="images/logos/humana.png" alt="Humana" class="logo logo-humana" width="464" height="96" decoding="async"></li>
+            </ul>
+            <ul class="ticker-set" aria-hidden="true">
+              <li><img src="images/logos/unitedhealthcare.png" alt="" class="logo logo-uhc" width="306" height="96" decoding="async"></li>
+              <li><img src="images/logos/bcbs.png" alt="" class="logo logo-bcbs" width="492" height="96" decoding="async"></li>
+              <li><img src="images/logos/aetna.png" alt="" class="logo logo-aetna" width="375" height="96" decoding="async"></li>
+              <li><img src="images/logos/cigna.png" alt="" class="logo logo-cigna" width="273" height="96" decoding="async"></li>
+              <li><img src="images/logos/humana.png" alt="" class="logo logo-humana" width="464" height="96" decoding="async"></li>
+            </ul>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal relative mx-auto w-full max-w-[460px] lg:max-w-none">
+      <div class="absolute -inset-3 -z-10 rounded-[32px] bg-gradient-to-br from-sky via-white to-gold-light/40 opacity-80 blur-2xl"></div>
+      <!-- Data chart: natural aspect, no photo tint/overlay layers (they would obscure the figures). -->
+      <figure class="relative overflow-hidden rounded-[24px] bg-white shadow-[var(--shadow-floating)] ring-1 ring-line">
+        <img src="images/premium-chart-1080.webp" srcset="images/premium-chart-720.webp 720w, images/premium-chart-1080.webp 1080w, images/premium-chart-1440.webp 1440w" sizes="(min-width: 1152px) 470px, (min-width: 1024px) 40vw, min(460px, calc(100vw - 32px))" alt="Bar chart: Florida's average ACA premium has climbed 177% since 2014. Average benchmark silver premium for a 40-year-old, before subsidies: $266 in 2014, $282 in 2015, $287 in 2016, $331 in 2017, $466 in 2018, $477 in 2019, $468 in 2020, $457 in 2021, $456 in 2022, $471 in 2023, $489 in 2024, $515 in 2025, $683 in 2026 (up 33% in one year) and $738 in 2027. Source: KFF." class="block h-auto w-full" width="1440" height="1044" decoding="async">
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section class="bg-white" style="padding-block: var(--section-y)">
+  <div class="mx-auto max-w-[720px] space-y-5 px-4 text-[17px] sm:space-y-6 sm:px-6 sm:text-lg">
+    <p class="reveal text-xl font-bold leading-snug text-navy sm:text-[22px]">If you’re one of the millions of Floridians who don’t qualify for subsidized health insurance, you may be feeling the pain of soaring “Affordable” Care Act premiums.</p>
+    <p class="reveal">Plans on the government Marketplace have seen double-digit rate hikes year after year, haunting families with huge monthly bills.</p>
+    <p class="reveal border-l-4 border-gold pl-5">But here’s something most people don’t realize: ACA plans are not your only option. Big companies like UnitedHealthcare and BlueCross offer another kind of health coverage that can save you hundreds per month while still protecting you from big medical bills. It’s called <strong class="text-navy">private health insurance.</strong></p>
+  </div>
+</section>
+
+<!-- ============ PRIVATE PLANS ============ -->
+<section class="bg-sky grain" style="padding-block: var(--section-y)">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="reveal mx-auto max-w-[760px] text-center">
+      <h2 class="text-[28px] sm:text-[38px]">Private Health Plans: An Affordable Alternative</h2>
+      <p class="mt-5 text-[17px] sm:text-lg">Private plans offered by carriers like UnitedHealthcare work differently than ACA plans:</p>
+    </div>
+
+    <!-- Swipeable on mobile (snap row + dots), 3-column grid from md up -->
+    <ul id="plan-cards" class="snap-row reveal -mx-4 mt-8 flex snap-x snap-mandatory scroll-pl-4 gap-3.5 overflow-x-auto px-4 pb-8 pt-1 sm:-mx-6 sm:mt-12 sm:scroll-pl-6 sm:px-6 md:mx-0 md:grid md:grid-cols-3 md:gap-5 md:overflow-visible md:p-0" aria-label="How private plans work differently">
+      <li class="card card-lift w-[84%] shrink-0 snap-start overflow-hidden sm:w-[58%] md:w-auto">
+        <div class="card-media aspect-[2/1] md:aspect-[3/2]">
+          <img src="images/card-personal-720.webp" srcset="images/card-personal-480.webp 480w, images/card-personal-720.webp 720w, images/card-personal-960.webp 960w" sizes="(min-width: 1152px) 355px, (min-width: 768px) 31vw, (min-width: 640px) 58vw, 84vw" alt="A mother and son smiling as they ride bikes along a palm-lined path" width="960" height="638" loading="lazy" decoding="async">
+        </div>
+        <div class="relative px-6 pb-6 sm:px-7 sm:pb-7">
+          <span class="-mt-6 relative flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-navy shadow-[var(--shadow-elevated)] ring-1 ring-line">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1"/></svg>
+          </span>
+          <p class="mt-5 text-[16px]">They’re priced based on your personal situation, not community rating. So you’re not paying for someone else’s treatment.</p>
+        </div>
+      </li>
+      <li class="card card-lift w-[84%] shrink-0 snap-start overflow-hidden sm:w-[58%] md:w-auto">
+        <div class="card-media aspect-[2/1] md:aspect-[3/2]">
+          <img src="images/card-deductible-720.webp" srcset="images/card-deductible-480.webp 480w, images/card-deductible-720.webp 720w, images/card-deductible-960.webp 960w" sizes="(min-width: 1152px) 355px, (min-width: 768px) 31vw, (min-width: 640px) 58vw, 84vw" alt="A hand pressing a small seesaw so the Deductible block rises and the Premium block lowers" width="960" height="638" loading="lazy" decoding="async">
+        </div>
+        <div class="relative px-6 pb-6 sm:px-7 sm:pb-7">
+          <span class="-mt-6 relative flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-navy shadow-[var(--shadow-elevated)] ring-1 ring-line">
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></svg>
+          </span>
+          <p class="mt-5 text-[16px]">They let you choose your deductible, so you control your monthly premium.</p>
+        </div>
+      </li>
+      <li class="card card-lift w-[84%] shrink-0 snap-start overflow-hidden sm:w-[58%] md:w-auto">
+        <div class="card-media aspect-[2/1] md:aspect-[3/2]">
+          <img src="images/card-network-720.webp" srcset="images/card-network-480.webp 480w, images/card-network-720.webp 720w, images/card-network-960.webp 960w" sizes="(min-width: 1152px) 355px, (min-width: 768px) 31vw, (min-width: 640px) 58vw, 84vw" alt="A pediatrician listening to a smiling girl's heartbeat while her mother holds her hand" width="960" height="638" loading="lazy" decoding="async">
+        </div>
+        <div class="relative px-6 pb-6 sm:px-7 sm:pb-7">
+          <div class="flex items-end justify-between gap-3">
+            <span class="-mt-6 relative flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-navy shadow-[var(--shadow-elevated)] ring-1 ring-line">
+              <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4m0 0-5.2 5.4M12 11.5l5.2 5.4"/></svg>
+            </span>
+            <img src="images/logos/unitedhealthcare.png" alt="UnitedHealthcare" class="logo logo-uhc [--logo-scale:.8]" width="306" height="96" loading="lazy" decoding="async">
+          </div>
+          <p class="mt-5 text-[16px]">UnitedHealthcare’s Choice Plus Network, for example, has the largest utilized doctors’ network in the nation. You can see any doctor you want.</p>
+        </div>
+      </li>
+    </ul>
+    <div class="-mt-5 flex justify-center gap-0.5 md:hidden" data-dots-for="plan-cards">
+      <button type="button" class="dot" aria-label="Show card 1 of 3" aria-current="true"><span></span></button>
+      <button type="button" class="dot" aria-label="Show card 2 of 3"><span></span></button>
+      <button type="button" class="dot" aria-label="Show card 3 of 3"><span></span></button>
+    </div>
+
+    <p class="reveal mx-auto mt-6 max-w-[760px] text-center text-[17px] sm:mt-8 md:mt-12 sm:text-lg">In other words, private plans give you the same critical protections as ACA plans, but at a much lower price point, because they’re customized around your needs. <strong class="text-navy"><span class="mark">We’ve seen clients save 20–50%</span> by switching to private coverage.</strong></p>
+  </div>
+</section>
+
+<!-- ============ INTRODUCING ============ -->
+<section class="bg-navy grain grain-light on-dark text-[#DCE8F4]" style="padding-block: var(--section-y)">
+  <div class="mx-auto grid max-w-6xl gap-8 px-4 sm:gap-10 sm:px-6 lg:grid-cols-[.8fr_1.2fr] lg:gap-16">
+    <div class="reveal">
+      <span class="block h-1 w-14 rounded-full bg-gold"></span>
+      <h2 class="mt-6 text-[30px] !text-white sm:text-[40px]">Introducing Patriot Crest Healthcare</h2>
+      <figure class="mt-8 mx-auto max-w-[300px] sm:mt-10 sm:max-w-[400px] lg:mx-0 lg:max-w-none">
+        <img src="images/intro-premium-stack-720.webp" srcset="images/intro-premium-stack-480.webp 480w, images/intro-premium-stack-720.webp 720w, images/intro-premium-stack-960.webp 960w" sizes="(min-width: 1152px) 400px, (min-width: 1024px) 35vw, (min-width: 640px) 400px, min(300px, calc(100vw - 32px))" alt="A Monthly premium tag on top of a tall stack of plan documents tabbed Copays, Deductible, Drug formulary and Doctor network" class="aspect-square w-full rounded-[24px] object-cover object-[50%_62%] shadow-[0_24px_48px_-24px_rgba(0,0,0,.55)] ring-1 ring-white/15 sm:aspect-auto" width="960" height="1200" loading="lazy" decoding="async">
+      </figure>
+    </div>
+    <div class="space-y-5 text-[17px] sm:space-y-6 sm:text-lg">
+      <p class="reveal text-white">Our only job is to find you special, customized plans that require an honest, licensed agent to access. We give you access to plans from top carriers like UnitedHealthcare, PHCS, and BlueCross. We’re an independent agency, so we work for you, not the insurance company.</p>
+      <!-- Carrier chips (white, since the logos are full-colour on a navy section). COMPLIANCE: confirm appointments before launch. -->
+      <ul class="reveal flex flex-wrap gap-2.5 [--logo-scale:.82]" aria-label="Carriers we compare">
+        <li class="logo-chip"><img src="images/logos/unitedhealthcare.png" alt="UnitedHealthcare" class="logo logo-uhc" width="306" height="96" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="images/logos/bcbs.png" alt="Blue Cross Blue Shield" class="logo logo-bcbs" width="492" height="96" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="images/logos/aetna.png" alt="Aetna" class="logo logo-aetna" width="375" height="96" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="images/logos/cigna.png" alt="Cigna" class="logo logo-cigna" width="273" height="96" loading="lazy" decoding="async"></li>
+        <li class="logo-chip"><img src="images/logos/humana.png" alt="Humana" class="logo logo-humana" width="464" height="96" loading="lazy" decoding="async"></li>
+      </ul>
+      <p class="reveal">Once you request information, our licensed agents will reach out and take the time to understand your situation, shop the market, and guide you to the most suitable plan for your health and budget. We’ll make sure you understand exactly how each option works, what it covers, and what you’ll pay.</p>
+      <div class="reveal rounded-2xl border border-white/15 bg-white/[0.06] p-5 sm:p-6 shadow-[0_24px_48px_-24px_rgba(0,0,0,.45)]">
+        <p class="text-white">The key is that <strong class="text-gold-light">your premium is only part of the picture.</strong> Other factors like copays, deductibles, drug formularies and provider networks decide your real costs. We’ll walk you through it all so you can make an informed choice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCHEDULE ============ -->
+<section class="bg-hero grain" style="padding-block: var(--section-y)">
+  <div class="mx-auto max-w-[860px] px-4 sm:px-6">
+    <div class="reveal card relative overflow-hidden p-5 text-center shadow-[var(--shadow-floating)] sm:p-12">
+      <div class="absolute inset-x-0 top-0 z-[2] h-1.5 bg-[linear-gradient(90deg,#12345B_0%,#12345B_40%,#D6A33A_40%,#D6A33A_60%,#C92336_60%)]"></div>
+      <div class="card-media -mx-5 -mt-5 mb-7 aspect-[2/1] sm:-mx-12 sm:-mt-12 sm:mb-10 sm:aspect-video">
+        <img src="images/schedule-call-1080.webp" srcset="images/schedule-call-720.webp 720w, images/schedule-call-1080.webp 1080w, images/schedule-call-1600.webp 1600w" sizes="(min-width: 860px) 812px, calc(100vw - 32px)" alt="A smiling mother taking notes during a speakerphone call at her kitchen counter while her son does homework" width="1600" height="905" loading="lazy" decoding="async">
+      </div>
+      <h2 class="text-[28px] sm:text-[38px]">Schedule Your Free Plan Review</h2>
+      <div class="mx-auto mt-5 max-w-[640px] space-y-5 text-[16px] sm:mt-6 sm:text-[17px]">
+        <p>To see how much you could save with a private plan, click below to schedule a free, no-obligation coverage review with a Patriot Crest agent. We’ll analyze your current ACA plan, crunch the numbers on some alternatives, and give you an honest recommendation. If we can’t beat your current premiums, we’ll tell you plain and simple.</p>
+        <p class="font-bold text-navy">Don’t overpay for health insurance. Click to book your free Patriot Crest plan review today and see why private coverage may be a smarter choice. It takes just 15 minutes and could save you thousands this year.</p>
+      </div>
+      <button type="button" data-open-form class="btn btn-red mt-7 w-full px-5 py-4 text-[13px] sm:mt-9 sm:w-auto sm:px-8 sm:text-[15px]">
+        Book Your Free Plan Review
+        <svg class="arrow h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+      <!-- Authority row under the CTA. COMPLIANCE: confirm appointments before launch. -->
+      <div class="mt-8 border-t border-line pt-6 sm:mt-10 sm:pt-8">
+        <p class="text-[11px] font-bold uppercase tracking-[0.18em] text-muted">We compare plans from carriers like</p>
+        <ul class="mt-4 flex flex-wrap items-center justify-center gap-x-7 gap-y-4 [--logo-scale:.85] sm:gap-x-10 sm:[--logo-scale:1]" aria-label="Carriers we compare">
+          <li><img src="images/logos/unitedhealthcare.png" alt="UnitedHealthcare" class="logo logo-uhc" width="306" height="96" loading="lazy" decoding="async"></li>
+          <li><img src="images/logos/bcbs.png" alt="Blue Cross Blue Shield" class="logo logo-bcbs" width="492" height="96" loading="lazy" decoding="async"></li>
+          <li><img src="images/logos/aetna.png" alt="Aetna" class="logo logo-aetna" width="375" height="96" loading="lazy" decoding="async"></li>
+          <li><img src="images/logos/cigna.png" alt="Cigna" class="logo logo-cigna" width="273" height="96" loading="lazy" decoding="async"></li>
+          <li><img src="images/logos/humana.png" alt="Humana" class="logo logo-humana" width="464" height="96" loading="lazy" decoding="async"></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT TO EXPECT ============ -->
+<section class="bg-white" style="padding-block: var(--section-y)">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="reveal mx-auto max-w-[720px] text-center">
+      <h2 class="text-[28px] sm:text-[38px]">What To Expect From Your Coverage Review</h2>
+      <p class="mt-5 text-[17px] sm:text-lg">When you book your free plan review, here’s what will happen:</p>
+    </div>
+
+    <ol class="mt-8 grid gap-4 sm:mt-12 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
+      <li class="reveal card card-lift relative overflow-hidden bg-paper">
+        <div class="card-media aspect-[2/1] sm:aspect-[4/3]">
+          <img src="images/step-1-needs-640.webp" srcset="images/step-1-needs-400.webp 400w, images/step-1-needs-640.webp 640w, images/step-1-needs-800.webp 800w" sizes="(min-width: 1152px) 260px, (min-width: 1024px) 23vw, (min-width: 640px) 46vw, calc(100vw - 32px)" alt="A notepad, prescription bottle, appointment card, reading glasses and phone laid out on a kitchen table" width="800" height="597" loading="lazy" decoding="async">
+        </div>
+        <div class="relative px-6 pb-6 sm:px-7 sm:pb-7">
+          <span class="-mt-[22px] relative z-[2] flex h-11 w-11 items-center justify-center rounded-full bg-navy text-[17px] font-bold text-white ring-4 ring-gold-light/70" aria-hidden="true">1</span>
+          <p class="mt-4 text-[15.5px] sm:mt-5">First, your dedicated agent will get to know your current health situation, budget priorities, and coverage must-haves. We’ll check if your doctors and prescriptions are covered, and consider upcoming medical needs to identify the right fit.</p>
+        </div>
+      </li>
+      <li class="reveal card card-lift relative overflow-hidden bg-paper">
+        <div class="card-media aspect-[2/1] sm:aspect-[4/3]">
+          <img src="images/step-2-analyze-640.webp" srcset="images/step-2-analyze-400.webp 400w, images/step-2-analyze-640.webp 640w, images/step-2-analyze-800.webp 800w" sizes="(min-width: 1152px) 260px, (min-width: 1024px) 23vw, (min-width: 640px) 46vw, calc(100vw - 32px)" alt="A highlighted plan summary with a Current plan sticky note, a calculator and a highlighter" style="object-position: 50% 15%" width="800" height="597" loading="lazy" decoding="async">
+        </div>
+        <div class="relative px-6 pb-6 sm:px-7 sm:pb-7">
+          <span class="-mt-[22px] relative z-[2] flex h-11 w-11 items-center justify-center rounded-full bg-navy text-[17px] font-bold text-white ring-4 ring-gold-light/70" aria-hidden="true">2</span>
+          <p class="mt-4 text-[15.5px] sm:mt-5">Next, we’ll analyze your ACA plan to determine what you’re paying today across premiums, deductibles, copays and coinsurance. We’ll also note any coverage gaps or limitations.</p>
+        </div>
+      </li>
+      <li class="reveal card card-lift relative overflow-hidden bg-paper">
+        <div class="card-media aspect-[2/1] sm:aspect-[4/3]">
+          <img src="images/step-3-compare-640.webp" srcset="images/step-3-compare-400.webp 400w, images/step-3-compare-640.webp 640w, images/step-3-compare-800.webp 800w" sizes="(min-width: 1152px) 260px, (min-width: 1024px) 23vw, (min-width: 640px) 46vw, calc(100vw - 32px)" alt="Three folders side by side labeled Option A, Option B and Option C" width="800" height="597" loading="lazy" decoding="async">
+        </div>
+        <div class="relative px-6 pb-6 sm:px-7 sm:pb-7">
+          <span class="-mt-[22px] relative z-[2] flex h-11 w-11 items-center justify-center rounded-full bg-navy text-[17px] font-bold text-white ring-4 ring-gold-light/70" aria-hidden="true">3</span>
+          <p class="mt-4 text-[15.5px] sm:mt-5">Then, we’ll pull up our network of A-rated Florida carriers and shop the market, comparing equivalent plans to your current policy. We’ll get you real quotes and a full breakdown of benefits and out-of-pocket costs.</p>
+        </div>
+      </li>
+      <li class="reveal card card-lift relative overflow-hidden bg-paper">
+        <div class="card-media aspect-[2/1] sm:aspect-[4/3]">
+          <img src="images/step-4-together-640.webp" srcset="images/step-4-together-400.webp 400w, images/step-4-together-640.webp 640w, images/step-4-together-800.webp 800w" sizes="(min-width: 1152px) 260px, (min-width: 1024px) 23vw, (min-width: 640px) 46vw, calc(100vw - 32px)" alt="A couple's hands going over a one-page plan comparison with two coffee mugs nearby" width="800" height="597" loading="lazy" decoding="async">
+        </div>
+        <div class="relative px-6 pb-6 sm:px-7 sm:pb-7">
+          <span class="-mt-[22px] relative z-[2] flex h-11 w-11 items-center justify-center rounded-full bg-navy text-[17px] font-bold text-white ring-4 ring-gold-light/70" aria-hidden="true">4</span>
+          <p class="mt-4 text-[15.5px] sm:mt-5">Finally, we’ll present you with a custom recommendation. We’ll sit down together, go over the numbers, and answer any questions. We’ll make sure you have a crystal clear understanding of how each option would work for you.</p>
+        </div>
+      </li>
+    </ol>
+
+    <p class="reveal mx-auto mt-8 max-w-[760px] rounded-2xl border-l-4 border-gold bg-ice px-5 py-5 text-[16px] sm:mt-10 sm:px-6 sm:text-[17px]">There’s no obligation and never any pressure. If your current plan is still the best value, we’ll tell you to stick with it! But in most cases, we can find a private plan that saves you significantly with the same quality of coverage.</p>
+  </div>
+</section>
+
+<!-- ============ PLEDGE ============ -->
+<section class="bg-sky grain" style="padding-block: var(--section-y)">
+  <div class="mx-auto max-w-6xl px-4 sm:px-6">
+    <div class="reveal mx-auto max-w-[720px] text-center">
+      <img src="brand_assets/logo/patriot-crest-emblem.png" alt="" width="72" height="72" class="mx-auto h-[72px] w-[72px] rounded-2xl bg-white p-1.5 shadow-[var(--shadow-elevated)]">
+      <h2 class="mt-6 text-[28px] sm:text-[38px]">The Patriot Crest Pledge</h2>
+      <p class="mt-5 text-[17px] sm:text-lg">When you work with Patriot Crest Healthcare, you can always expect:</p>
+    </div>
+
+    <ul class="mt-8 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2">
+      <li class="reveal card card-lift flex gap-4 p-5 sm:gap-5 sm:p-7">
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-navy text-gold-light">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.2-8 9-4.8-.8-8-4.5-8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg>
+        </span>
+        <p class="text-[16px]"><strong class="block text-[17px] text-navy">Independent, unbiased advice.</strong> We work for you, not the carriers.</p>
+      </li>
+      <li class="reveal card card-lift flex gap-4 p-5 sm:gap-5 sm:p-7">
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-navy text-gold-light">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>
+        </span>
+        <p class="text-[16px]"><strong class="block text-[17px] text-navy">Absolute privacy and security for your medical information.</strong></p>
+      </li>
+      <li class="reveal card card-lift flex gap-4 p-5 sm:gap-5 sm:p-7">
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-navy text-gold-light">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l4 4v14H6z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>
+        </span>
+        <p class="text-[16px]"><strong class="block text-[17px] text-navy">Clear, complete explanations of how each plan works.</strong> We won’t let you get surprised by bills.</p>
+      </li>
+      <li class="reveal card card-lift flex gap-4 p-5 sm:gap-5 sm:p-7">
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-navy text-gold-light">
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg>
+        </span>
+        <p class="text-[16px]"><strong class="block text-[17px] text-navy">Ongoing support and advocacy.</strong> We’re here long after you enroll to help with any issues or questions.</p>
+      </li>
+    </ul>
+
+    <div class="reveal mx-auto mt-8 max-w-[760px] space-y-5 text-center sm:mt-12 text-[17px] sm:text-lg">
+      <p>We believe that you shouldn’t have to be a health insurance expert to get a fair price on great coverage. Our mission is to make the process easy, transparent, and tailored to you.</p>
+      <p class="font-bold text-navy">If you’re sick of paying for others’ treatments, book your free, no-obligation plan review now and let us find you a better deal for the coverage you need. It could be the easiest money you save all year.</p>
+      <button type="button" data-open-form class="btn btn-red mt-4 w-full px-10 py-4 text-sm sm:w-auto sm:text-[15px]">
+        See My Savings
+        <svg class="arrow h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="bg-white" style="padding-block: var(--section-y)">
+  <div class="mx-auto max-w-[860px] px-4 sm:px-6">
+    <h2 class="reveal text-center text-[28px] sm:text-[38px]">Frequently Asked Questions</h2>
+    <div class="reveal mt-8 divide-y divide-line border-y border-line sm:mt-10">
+      <details class="group py-1" open>
+        <summary class="flex items-center justify-between gap-4 py-4 sm:gap-6 sm:py-5">
+          <span class="faq-q text-[17px] font-bold text-navy">What’s the difference between private health plans and ACA plans?</span>
+          <span class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ice text-navy" aria-hidden="true"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq-body pb-5 pr-2 text-[16px] sm:pb-6 sm:pr-12">The biggest difference is how they’re priced. ACA plans charge based on “community rating,” meaning everyone pays the same rate regardless of health. Private plans use individual underwriting to base premiums on your personal profile. This means healthy people can pay much less for the same or a better level of coverage.</div>
+      </details>
+      <details class="group py-1">
+        <summary class="flex items-center justify-between gap-4 py-4 sm:gap-6 sm:py-5">
+          <span class="faq-q text-[17px] font-bold text-navy">Can I keep my doctor on a private plan?</span>
+          <span class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ice text-navy" aria-hidden="true"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq-body pb-5 pr-2 text-[16px] sm:pb-6 sm:pr-12">In most cases, yes. The private carriers we work with have broad local and nationwide networks. We’ll make sure any plan we recommend includes your preferred providers.</div>
+      </details>
+      <details class="group py-1">
+        <summary class="flex items-center justify-between gap-4 py-4 sm:gap-6 sm:py-5">
+          <span class="faq-q text-[17px] font-bold text-navy">How do I know if a private plan is right for me?</span>
+          <span class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ice text-navy" aria-hidden="true"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq-body pb-5 pr-2 text-[16px] sm:pb-6 sm:pr-12">The only way to know for sure is to run the numbers, and that’s exactly what we’ll do in your coverage review. We’ll get you real quotes, map them against your current plan, and determine your savings. If a private plan isn’t your best option, we’ll advise you to stay put.</div>
+      </details>
+      <details class="group py-1">
+        <summary class="flex items-center justify-between gap-4 py-4 sm:gap-6 sm:py-5">
+          <span class="faq-q text-[17px] font-bold text-navy">What if I have a pre-existing condition?</span>
+          <span class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-ice text-navy" aria-hidden="true"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>
+        </summary>
+        <div class="faq-body pb-5 pr-2 text-[16px] sm:pb-6 sm:pr-12">Not a problem. The private plans we offer are guaranteed issue, meaning you can’t be turned down or charged more based on health history. You’ll be asked some medical questions to determine your risk profile, but this is only used to identify the best-fit plan, not deny you coverage.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="bg-navy-deep grain grain-light on-dark relative overflow-hidden pb-[170px] pt-16 sm:py-[clamp(96px,14vw,180px)]">
+  <div class="cta-photo" aria-hidden="true">
+    <img src="images/cta-beach-1600.webp" srcset="images/cta-beach-960.webp 960w, images/cta-beach-1600.webp 1600w, images/cta-beach-2400.webp 2400w" sizes="100vw" alt="" width="2400" height="1029" loading="lazy" decoding="async">
+  </div>
+  <div class="reveal mx-auto max-w-[820px] px-4 text-center sm:px-6">
+    <span class="mx-auto block h-1 w-14 rounded-full bg-gold"></span>
+    <p class="mt-7 text-[26px] leading-snug text-white sm:text-[36px]" style="letter-spacing:-0.02em">Fighting high insurance costs, one family at a time.</p>
+    <button type="button" data-open-form class="btn btn-red mt-10 w-full px-8 py-4 text-sm sm:w-auto sm:text-[15px]">
+      Book Your Free Plan Review
+      <svg class="arrow h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="border-t border-white/10 bg-navy-deep text-[#B9CCDF]">
+  <div class="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-12">
+    <div class="flex flex-col items-center gap-4 text-center">
+      <img src="brand_assets/logo/patriot-crest-emblem.png" alt="Patriot Crest Healthcare" width="64" height="64" class="h-16 w-16 rounded-xl bg-white p-1">
+      <p class="text-sm font-bold tracking-[0.14em] text-white">PATRIOT CREST HEALTHCARE</p>
+    </div>
+    <!-- PLACEHOLDER: owner must supply legal name/DBA, Florida 2-15 license no., carrier appointments, compensation disclosure, call/text consent language, and privacy policy before launch. -->
+    <p class="mx-auto mt-8 max-w-[760px] text-center text-[13px] leading-relaxed">[Legal name / DBA] · [Florida 2-15 License No. ________] · [Licensing &amp; compensation disclosure, product-type disclosures, and call/text consent language to be supplied by the agency before launch.]</p>
+    <!-- PLACEHOLDER (legal review): carrier trademark / non-affiliation notice to accompany the carrier logos. -->
+    <p class="mx-auto mt-4 max-w-[760px] text-center text-[12px] leading-relaxed text-[#9FB6CC]">Carrier names and logos are trademarks of their respective owners and are shown to identify carriers whose plans may be available. Patriot Crest Healthcare is an independent agency and is not affiliated with or endorsed by any carrier shown. Plan availability varies by carrier and area.</p>
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-1 text-xs font-bold uppercase tracking-[0.1em]">
+      <a href="#" class="rounded py-3 text-[#DCE8F4] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-light active:opacity-70">Privacy Policy</a>
+      <a href="#" class="rounded py-3 text-[#DCE8F4] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-gold-light active:opacity-70">Terms</a>
+      <span>© <span data-year>2026</span> Patriot Crest Healthcare</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ LEAD FORM DIALOG ============ -->
+<dialog id="lead-dialog" aria-labelledby="lead-title">
+  <div class="dialog-panel relative rounded-[24px] bg-white p-6 shadow-[var(--shadow-floating)] sm:p-8">
+    <button type="button" data-close-form class="icon-btn absolute right-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-ice text-navy hover:bg-sky" aria-label="Close">
+      <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <div class="h-1.5 w-16 rounded-full bg-[linear-gradient(90deg,#12345B_0%,#12345B_50%,#C92336_50%)]"></div>
+    <h2 id="lead-title" class="mt-5 pr-10 text-[24px] sm:text-[28px]">Book Your Free Plan Review</h2>
+
+    <!-- PLACEHOLDER: form has no backend yet. Wire `action` to the CRM/booking endpoint. Collects no SSN or health details. -->
+    <form id="lead-form" class="mt-6 grid gap-4" novalidate>
+      <div>
+        <label for="f-name" class="mb-1.5 block text-sm font-bold text-navy">Full name</label>
+        <input id="f-name" name="name" class="field" autocomplete="name" required>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-[1.4fr_1fr]">
+        <div>
+          <label for="f-phone" class="mb-1.5 block text-sm font-bold text-navy">Phone</label>
+          <input id="f-phone" name="phone" type="tel" inputmode="tel" class="field" autocomplete="tel" required>
+        </div>
+        <div>
+          <label for="f-zip" class="mb-1.5 block text-sm font-bold text-navy">ZIP code</label>
+          <input id="f-zip" name="zip" inputmode="numeric" pattern="[0-9]{5}" maxlength="5" class="field" autocomplete="postal-code" required>
+        </div>
+      </div>
+      <div>
+        <label for="f-email" class="mb-1.5 block text-sm font-bold text-navy">Email</label>
+        <input id="f-email" name="email" type="email" class="field" autocomplete="email" spellcheck="false">
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div>
+          <label for="f-who" class="mb-1.5 block text-sm font-bold text-navy">Who needs coverage?</label>
+          <select id="f-who" name="coverage_for" class="field" required>
+            <option value="">Select…</option><option>Just me</option><option>Me and my spouse</option><option>My family</option>
+          </select>
+        </div>
+        <div>
+          <label for="f-time" class="mb-1.5 block text-sm font-bold text-navy">Best time to reach you</label>
+          <select id="f-time" name="contact_time" class="field">
+            <option>Morning</option><option>Afternoon</option><option>Evening</option>
+          </select>
+        </div>
+      </div>
+      <!-- PLACEHOLDER consent copy: replace with legal-approved TCPA language. -->
+      <label class="flex items-start gap-3 text-[12.5px] leading-relaxed text-muted">
+        <input type="checkbox" name="consent" required class="mt-1 h-4 w-4 shrink-0 accent-[#12345B]">
+        <span>[Call/text consent language to be supplied by the agency.] See our <a href="#" class="link">Privacy Policy</a>.</span>
+      </label>
+      <p id="form-error" class="hidden text-sm font-bold text-flag" role="alert"></p>
+      <button type="submit" class="btn btn-red mt-1 w-full px-8 py-4 text-sm">
+        Book Your Free Plan Review
+        <svg class="arrow h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </button>
+    </form>
+    <div id="form-success" class="hidden py-6 text-center" role="status">
+      <span class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-navy text-gold-light"><svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg></span>
+      <p class="mt-5 text-lg font-bold text-navy">Thanks, we got your request.</p>
+    </div>
+  </div>
+</dialog>
+
+<script>
+  // Year
+  document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+
+  // Reveal on scroll
+  const io = 'IntersectionObserver' in window ? new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }) : null;
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    if (!io) return el.classList.add('is-in');
+    el.style.transitionDelay = (el.parentElement.children.length > 1 ? (Array.prototype.indexOf.call(el.parentElement.children, el) % 4) * 70 : 0) + 'ms';
+    io.observe(el);
+  });
+
+  // Ticker: make each set at least as wide as the viewport so the -50% loop never shows a gap
+  document.querySelectorAll('[data-ticker]').forEach(t => {
+    const sets = [...t.querySelectorAll('.ticker-set')];
+    const fill = () => sets.forEach(set => {
+      const originals = [...set.children].filter(li => !li.dataset.clone);
+      let guard = 0;
+      while (set.scrollWidth - 44 < t.clientWidth * 1.1 && guard++ < 6) {
+        originals.forEach(li => { const c = li.cloneNode(true); c.dataset.clone = '1'; c.querySelector('img').alt = ''; set.appendChild(c); });
+      }
+    });
+    // Both sets must stay identical, so fill by the same count
+    fill();
+    const n = Math.max(...sets.map(s => s.children.length));
+    sets.forEach(s => { const o = [...s.children].filter(li => !li.dataset.clone); while (s.children.length < n) { const c = o[s.children.length % o.length].cloneNode(true); c.dataset.clone = '1'; c.querySelector('img').alt = ''; s.appendChild(c); } });
+  });
+
+  // Snap-row dots (private-plan cards on mobile)
+  document.querySelectorAll('[data-dots-for]').forEach(wrap => {
+    const row = document.getElementById(wrap.dataset.dotsFor);
+    const cards = [...row.children];
+    const dots = [...wrap.querySelectorAll('.dot')];
+    const setActive = (i) => dots.forEach((d, j) => d.setAttribute('aria-current', j === i ? 'true' : 'false'));
+    let ticking = false;
+    row.addEventListener('scroll', () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => {
+        ticking = false;
+        const max = row.scrollWidth - row.clientWidth;
+        if (row.scrollLeft >= max - 4) return setActive(cards.length - 1);
+        const left = row.getBoundingClientRect().left;
+        let best = 0, bestDist = Infinity;
+        cards.forEach((c, i) => { const d = Math.abs(c.getBoundingClientRect().left - left); if (d < bestDist) { bestDist = d; best = i; } });
+        setActive(best);
+      });
+    }, { passive: true });
+    // Card i's offset from card 0 is exactly the scroll distance that snaps it to the start edge.
+    dots.forEach((d, i) => d.addEventListener('click', () => {
+      row.scrollTo({ left: cards[i].offsetLeft - cards[0].offsetLeft, behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    }));
+  });
+
+  // Lead dialog
+  const dlg = document.getElementById('lead-dialog');
+  const form = document.getElementById('lead-form');
+  const err = document.getElementById('form-error');
+  let opener = null;
+  document.querySelectorAll('[data-open-form]').forEach(b => b.addEventListener('click', () => {
+    opener = b;
+    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
+    setTimeout(() => document.getElementById('f-name').focus(), 50);
+  }));
+  document.querySelector('[data-close-form]').addEventListener('click', () => dlg.close());
+  dlg.addEventListener('click', (e) => { if (e.target === dlg) dlg.close(); });
+  dlg.addEventListener('close', () => opener && opener.focus());
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const bad = [...form.querySelectorAll('[required]')].find(el => el.type === 'checkbox' ? !el.checked : !el.checkValidity());
+    if (bad) {
+      const label = bad.type === 'checkbox' ? 'Please confirm the consent box.' : `Please check “${form.querySelector(`label[for="${bad.id}"]`).textContent}”.`;
+      err.textContent = label; err.classList.remove('hidden'); bad.focus(); return;
+    }
+    err.classList.add('hidden');
+    // PLACEHOLDER: POST to CRM here.
+    form.classList.add('hidden');
+    document.getElementById('form-success').classList.remove('hidden');
+  });
+</script>
+</body>
+</html>
